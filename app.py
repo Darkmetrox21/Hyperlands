@@ -104,9 +104,13 @@ motes=''.join('<i style="left:'+str((i*37)%100)+'%;top:'+str((i*23)%100)+'%;anim
 scene='<!doctype html><html lang="es"><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>'+css+'</style></head><body><section class="scene"><div class="motes">'+motes+'</div><div class="inner">'+brand+content+'</div></section></body></html>'
 # Compatibility with the new iframe API, retaining the old fallback for older versions.
 if hasattr(st, "iframe"):
-    st.iframe(scene, height=1000)
+st.iframe(scene, height="content")
 else:
-    components.html(scene, height=1000, scrolling=True)
+components.html(
+scene,
+height=720 if step < 2 else 1100,
+scrolling=True,
+)
 
 def save(status):
     if token:
