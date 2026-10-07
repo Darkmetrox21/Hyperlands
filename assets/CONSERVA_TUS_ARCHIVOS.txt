@@ -1,0 +1,1 @@
+Conserva logo.png, isla.jpg y tema.ogg de tu version anterior. No borres esta carpeta al actualizar.
